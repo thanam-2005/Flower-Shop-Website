@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blooming Petals | Luxury Modern Floral Boutique</title>
+  <meta name="description"
+    content="Handcrafted luxury flower bouquets delivered fresh to your doorstep. Fresh daily roses, lilies, tulips, orchids, and custom wedding decorations.">
+  <meta name="keywords"
+    content="flower shop, luxury florist, fresh bouquets, same day flower delivery, roses, orchids, tulips, wedding flowers">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader">
+    <div class="preloader-bloom">
+      <i class="fa-solid fa-spa"></i>
+    </div>
+    <div class="preloader-text">Thans Petals</div>
+  </div>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+  <!-- Header / Navbar -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <span>Thans Petals</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#categories" class="nav-link">Categories</a>
+        <a href="#best-sellers" class="nav-link">Shop</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="action-btn" id="searchTrigger" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button class="action-btn" id="wishlistTrigger" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count" id="wishlistBadge">0</span>
+        </button>
+
+        <button class="action-btn" id="cartTrigger" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count" id="cartBadge">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Live Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-box-wrap">
+      <i class="fa-solid fa-magnifying-glass" style="color: var(--primary); font-size: 1.2rem;"></i>
+      <input type="text" id="searchInput" placeholder="Search roses, lilies, tulips, wedding bouquets...">
+      <button class="search-close-btn" id="searchClose">&times;</button>
+    </div>
+    <div class="search-results-dropdown" id="searchResults">
+      <p class="text-center" style="color: var(--text-muted);">Start typing to find fresh flowers...</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- Section 1: Hero -->
+    <section class="hero" id="hero">
+      <canvas class="hero-particle-canvas" id="particleCanvas"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-content reveal active">
+          <div class="hero-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> 100% Organic & Handpicked Daily
+          </div>
+          <h1 class="hero-title">Fresh Flowers for Every <span>Special Moment</span></h1>
+          <p class="hero-subtitle">Beautiful bouquets handcrafted with love and delivered fresh to your doorstep within
+            hours.</p>
+
+          <div class="hero-btn-group">
+            <a href="#best-sellers" class="btn btn-primary">
+              Shop Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#categories" class="btn btn-secondary">
+              Explore Collection
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3 class="counter" data-target="15000">0</h3>
+              <p>Happy Clients</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="450">0</h3>
+              <p>Floral Designs</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="99">0</h3>
+              <p>% Freshness Guarantee</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal active">
+          <div class="hero-img-card">
+            <img src="images/hero-bg.jpg" alt="Luxury Bouquet">
+          </div>
+
+          <div class="floating-badge badge-delivery glass-card">
+            <div class="badge-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div>
+              <strong style="display:block; font-size: 0.95rem;">Same Day Delivery</strong>
+              <small style="color: var(--text-muted);">Express 2-hour drop</small>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-rating glass-card">
+            <div class="badge-icon"><i class="fa-solid fa-star" style="color: #ffc107;"></i></div>
+            <div>
+              <strong style="display:block; font-size: 0.95rem;">4.9 / 5.0 Rating</strong>
+              <small style="color: var(--text-muted);">Over 3,000 Reviews</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Featured Categories -->
+    <section class="section-padding" id="categories">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="section-subtitle">Curated Collections</span>
+          <h2 class="section-title">Featured <span>Categories</span></h2>
+          <p class="section-desc">Explore our hand-picked floral categories tailored for celebrations, romance, and
+            joyful surprises.</p>
+        </div>
+
+        <div class="categories-grid">
+          <div class="category-card reveal" data-category="Roses">
+            <img src="images/cat-roses.jpg" alt="Roses Collection">
+            <div class="category-overlay">
+              <h3 class="category-name">Roses</h3>
+              <span class="category-count">24 Arrangements</span>
+            </div>
+          </div>
+
+          <div class="category-card reveal" data-category="Lilies">
+            <img src="images/cat-lilies.jpg" alt="Lilies Collection">
+            <div class="category-overlay">
+              <h3 class="category-name">Lilies</h3>
+              <span class="category-count">18 Arrangements</span>
+            </div>
+          </div>
+
+          <div class="category-card reveal" data-category="Tulips">
+            <img src="images/cat-tulips.jpg" alt="Tulips Collection">
+            <div class="category-overlay">
+              <h3 class="category-name">Tulips</h3>
+              <span class="category-count">15 Arrangements</span>
+            </div>
+          </div>
+
+          <div class="category-card reveal" data-category="Orchids">
+            <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80"
+              alt="Orchids Collection">
+            <div class="category-overlay">
+              <h3 class="category-name">Orchids</h3>
+              <span class="category-count">12 Arrangements</span>
+            </div>
+          </div>
+
+          <div class="category-card reveal" data-category="Sunflowers">
+            <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=600&q=80"
+              alt="Sunflowers Collection">
+            <div class="category-overlay">
+              <h3 class="category-name">Sunflowers</h3>
+              <span class="category-count">10 Arrangements</span>
+            </div>
+          </div>
+
+          <div class="category-card reveal" data-category="Mixed">
+            <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80"
+              alt="Mixed Bouquets">
+            <div class="category-overlay">
+              <h3 class="category-name">Mixed Bouquets</h3>
+              <span class="category-count">30 Arrangements</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Best Selling Flowers -->
+    <section class="section-padding" id="best-sellers" style="background: rgba(248, 187, 208, 0.08);">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="section-subtitle">Our Best Sellers</span>
+          <h2 class="section-title">Popular <span>Bouquets</span></h2>
+          <p class="section-desc">Hand-selected favorites loved by our customers for weddings, anniversaries, and
+            heartfelt gifts.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs reveal">
+          <button class="tab-btn active" data-filter="all">All Flowers</button>
+          <button class="tab-btn" data-filter="Roses">Roses</button>
+          <button class="tab-btn" data-filter="Lilies">Lilies</button>
+          <button class="tab-btn" data-filter="Tulips">Tulips</button>
+          <button class="tab-btn" data-filter="Orchids">Orchids</button>
+          <button class="tab-btn" data-filter="Mixed">Mixed</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Dynamically populated via js/shop.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: About Us -->
+    <section class="section-padding" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <img src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80"
+              alt="Florist Artistry" class="about-img">
+            <div class="about-experience-card glass-card">
+              <h2>15+</h2>
+              <p style="font-weight: 600; color: var(--text-main);">Years of Excellence</p>
+            </div>
+          </div>
+
+          <div class="about-content reveal">
+            <span class="section-subtitle">Our Passion & Heritage</span>
+            <h2 class="section-title">Crafting <span>Floral Elegance</span> Since 2011</h2>
+            <p>At Blooming Petals, we believe every flower tells a story. Founded with a vision to bring nature's
+              delicate beauty into modern living, our artisan florists handcraft every bouquet with uncompromised love,
+              care, and precision.</p>
+
+            <div class="about-features-grid">
+              <div class="about-feature-item">
+                <i class="fa-solid fa-leaf"></i>
+                <div>
+                  <strong>Fresh Daily Flowers</strong>
+                  <p style="font-size: 0.85rem;">Sourced from organic farms</p>
+                </div>
+              </div>
+
+              <div class="about-feature-item">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                <div>
+                  <strong>Same Day Delivery</strong>
+                  <p style="font-size: 0.85rem;">Temperature-controlled delivery</p>
+                </div>
+              </div>
+
+              <div class="about-feature-item">
+                <i class="fa-solid fa-box-open"></i>
+                <div>
+                  <strong>Eco-Friendly Packaging</strong>
+                  <p style="font-size: 0.85rem;">100% biodegradable materials</p>
+                </div>
+              </div>
+
+              <div class="about-feature-item">
+                <i class="fa-solid fa-gem"></i>
+                <div>
+                  <strong>Premium Quality</strong>
+                  <p style="font-size: 0.85rem;">Hand-inspected stem by stem</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-primary" style="margin-top: 35px;">
+              Contact Our Artisan Florists <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Why Choose Us -->
+    <section class="section-padding" id="why-us" style="background: var(--lavender);">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="section-subtitle">Why Choose Us</span>
+          <h2 class="section-title">The <span>Thans Petals</span> Distinction</h2>
+          <p class="section-desc">Experience luxury floral design paired with world-class service and instant
+            reliability.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card glass-card reveal">
+            <div class="feature-icon-wrap"><i class="fa-solid fa-sun"></i></div>
+            <h3>Fresh Daily</h3>
+            <p>Every blossom is plucked at peak bloom to guarantee maximum vibrancy and longevity in your vase.</p>
+          </div>
+
+          <div class="feature-card glass-card reveal">
+            <div class="feature-icon-wrap"><i class="fa-solid fa-truck-fast"></i></div>
+            <h3>Free Delivery</h3>
+            <p>Complimentary doorstep express shipping on all orders over $50 with live GPS order tracking.</p>
+          </div>
+
+          <div class="feature-card glass-card reveal">
+            <div class="feature-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Secure Payment</h3>
+            <p>Bank-grade SSL encrypted checkout options covering cards, Apple Pay, PayPal, and Google Pay.</p>
+          </div>
+
+          <div class="feature-card glass-card reveal">
+            <div class="feature-icon-wrap"><i class="fa-solid fa-headset"></i></div>
+            <h3>24/7 Customer Support</h3>
+            <p>Our dedicated floral experts are ready around the clock to assist with custom requests and advice.</p>
+          </div>
+
+          <div class="feature-card glass-card reveal">
+            <div class="feature-icon-wrap"><i class="fa-solid fa-wand-magic"></i></div>
+            <h3>Custom Bouquets</h3>
+            <p>Collaborate with master designers to build unique personalized flower arrangements for any theme.</p>
+          </div>
+
+          <div class="feature-card glass-card reveal">
+            <div class="feature-icon-wrap"><i class="fa-solid fa-tag"></i></div>
+            <h3>Affordable Prices</h3>
+            <p>Direct farm sourcing enables luxury boutique arrangements at transparent, accessible pricing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Special Offers (Banner & Countdown Timer) -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="offer-banner reveal">
+          <span class="section-subtitle"
+            style="background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.4);">Limited Time
+            Celebration</span>
+          <h2>Flat 30% OFF on Wedding Bouquets</h2>
+          <p>Book your dream wedding floral decorations now and get 30% discount plus free bridal corsage setup!</p>
+
+          <div class="countdown-wrap" id="offerCountdown">
+            <div class="countdown-box">
+              <div class="countdown-number" id="countDays">02</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-number" id="countHours">14</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-number" id="countMins">38</div>
+              <div class="countdown-label">Mins</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-number" id="countSecs">45</div>
+              <div class="countdown-label">Secs</div>
+            </div>
+          </div>
+
+          <a href="#best-sellers" class="btn btn-primary" style="background: #ffffff; color: var(--primary);">
+            Claim Your Discount Now <i class="fa-solid fa-tag"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Customer Testimonials Slider -->
+    <section class="section-padding" id="testimonials">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="section-subtitle">Client Stories</span>
+          <h2 class="section-title">Loved by <span>Thousands</span></h2>
+          <p class="section-desc">Read honest reviews from our delighted customers who trust us with their special
+            moments.</p>
+        </div>
+
+        <div class="testimonials-slider-wrap glass-card reveal">
+          <div class="testimonial-track" id="testimonialTrack">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                alt="Sophia Martinez" class="testimonial-avatar">
+              <div class="product-rating" style="justify-content: center; margin-bottom: 12px;">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"The wedding bouquet was beyond breathtaking! Every single rose was fresh,
+                vibrant, and lasted for nearly two weeks. Exceptional customer care!"</p>
+              <h4 class="testimonial-author">Sophia Martinez</h4>
+              <span class="testimonial-role">Bride & Event Designer</span>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-slide">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                alt="David Miller" class="testimonial-avatar">
+              <div class="product-rating" style="justify-content: center; margin-bottom: 12px;">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"Ordered an anniversary lily arrangement for my wife with 2-hour express
+                delivery. They delivered right on time with a beautiful handwritten card."</p>
+              <h4 class="testimonial-author">David Miller</h4>
+              <span class="testimonial-role">Verified Buyer</span>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80"
+                alt="Emily Watson" class="testimonial-avatar">
+              <div class="product-rating" style="justify-content: center; margin-bottom: 12px;">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"Thans Petals provided corporate flower arrangements for our annual summit.
+                The elegance and glassmorphic vase presentations wowed all guests."</p>
+              <h4 class="testimonial-author">Emily Watson</h4>
+              <span class="testimonial-role">Corporate Event Director</span>
+            </div>
+          </div>
+
+          <div class="slider-controls">
+            <button class="btn-icon-round" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider-dots" id="sliderDots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <button class="btn-icon-round" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Flower Gallery & Lightbox -->
+    <section class="section-padding" id="gallery">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="section-subtitle">Visual Inspiration</span>
+          <h2 class="section-title">Floral <span>Gallery</span></h2>
+          <p class="section-desc">Browse our artistic floral compositions. Click any image to view in full resolution.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item reveal" data-full="images/hero-bg.jpg">
+            <img src="images/hero-bg.jpg" alt="Rose Arrangement">
+            <div class="gallery-hover-overlay"><i class="fa-solid fa-expand"></i></div>
+          </div>
+          <div class="gallery-item reveal" data-full="images/cat-roses.jpg">
+            <img src="images/cat-roses.jpg" alt="Velvet Roses">
+            <div class="gallery-hover-overlay"><i class="fa-solid fa-expand"></i></div>
+          </div>
+          <div class="gallery-item reveal" data-full="images/cat-lilies.jpg">
+            <img src="images/cat-lilies.jpg" alt="White Lilies">
+            <div class="gallery-hover-overlay"><i class="fa-solid fa-expand"></i></div>
+          </div>
+          <div class="gallery-item reveal" data-full="images/cat-tulips.jpg">
+            <img src="images/cat-tulips.jpg" alt="Dutch Tulips">
+            <div class="gallery-hover-overlay"><i class="fa-solid fa-expand"></i></div>
+          </div>
+          <div class="gallery-item reveal"
+            data-full="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80">
+            <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80"
+              alt="Orchids">
+            <div class="gallery-hover-overlay"><i class="fa-solid fa-expand"></i></div>
+          </div>
+          <div class="gallery-item reveal"
+            data-full="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80">
+            <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80"
+              alt="Mixed Bouquet">
+            <div class="gallery-hover-overlay"><i class="fa-solid fa-expand"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img src="" id="lightboxImg" alt="Enlarged view">
+      </div>
+    </div>
+
+    <!-- Section 9: Our Services -->
+    <section class="section-padding" id="services" style="background: rgba(255, 105, 180, 0.04);">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="section-subtitle">What We Offer</span>
+          <h2 class="section-title">Our Specialty <span>Services</span></h2>
+          <p class="section-desc">From intimate birthday surprises to lavish wedding scapes and corporate styling.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card glass-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-cake-candles"></i></div>
+            <h3>Birthday Flowers</h3>
+            <p>Celebrate another year of joy with cheerful, customized birthday floral arrangements and surprise
+              deliveries.</p>
+            <a href="#contact" class="btn btn-secondary"
+              style="align-self: flex-start; padding: 8px 20px; font-size: 0.85rem;">Book Service</a>
+          </div>
+
+          <div class="service-card glass-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-rings-wedding"></i></div>
+            <h3>Wedding Decoration</h3>
+            <p>Complete wedding venue styling, aisle runner florals, table centerpieces, and bespoke bridal bouquets.
+            </p>
+            <a href="#contact" class="btn btn-secondary"
+              style="align-self: flex-start; padding: 8px 20px; font-size: 0.85rem;">Book Service</a>
+          </div>
+
+          <div class="service-card glass-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-heart-circle-bolt"></i></div>
+            <h3>Anniversary Gifts</h3>
+            <p>Express everlasting devotion with romantic luxury rose boxes, chocolates, and custom keepsake cards.</p>
+            <a href="#contact" class="btn btn-secondary"
+              style="align-self: flex-start; padding: 8px 20px; font-size: 0.85rem;">Book Service</a>
+          </div>
+
+          <div class="service-card glass-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-building-user"></i></div>
+            <h3>Corporate Events</h3>
+            <p>Weekly office floral rotations, gala dinner floral concepts, and corporate milestone arrangement hampers.
+            </p>
+            <a href="#contact" class="btn btn-secondary"
+              style="align-self: flex-start; padding: 8px 20px; font-size: 0.85rem;">Book Service</a>
+          </div>
+
+          <div class="service-card glass-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-dove"></i></div>
+            <h3>Sympathy Flowers</h3>
+            <p>Graceful, respectful wreaths and condolence bouquets designed to bring peace and comfort to loved ones.
+            </p>
+            <a href="#contact" class="btn btn-secondary"
+              style="align-self: flex-start; padding: 8px 20px; font-size: 0.85rem;">Book Service</a>
+          </div>
+
+          <div class="service-card glass-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-gift"></i></div>
+            <h3>Festival Collections</h3>
+            <p>Seasonal blooms for Mother's Day, Valentine's Day, Christmas, New Year, and festive celebrations.</p>
+            <a href="#contact" class="btn btn-secondary"
+              style="align-self: flex-start; padding: 8px 20px; font-size: 0.85rem;">Book Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Contact Section & FAQ -->
+    <section class="section-padding" id="contact">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2 class="section-title">Contact <span>Our Boutique</span></h2>
+          <p class="section-desc">Have a question or custom floral inquiry? Send us a message or visit our boutique.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Form -->
+          <div class="contact-form-card glass-card reveal">
+            <form id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName" class="form-control" placeholder="e.g. Thanam">
+                <span class="form-error">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="thano@gmail.com">
+                <span class="form-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactPhone">Phone Number</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="+91 9123456787">
+                <span class="form-error">Please enter a valid phone number.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" class="form-control" rows="4"
+                  placeholder="Tell us about your floral vision..."></textarea>
+                <span class="form-error">Message cannot be empty.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Info & Map -->
+          <div class="contact-info-wrap reveal">
+            <div class="glass-card" style="padding: 35px; margin-bottom: 25px;">
+              <h3 style="margin-bottom: 20px;">Boutique Information</h3>
+
+              <p style="display: flex; gap: 12px; margin-bottom: 15px;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary); font-size: 1.2rem;"></i>
+                <span>742 Evergreen Terrace, Floral District, New York, NY 10001</span>
+              </p>
+
+              <p style="display: flex; gap: 12px; margin-bottom: 15px;">
+                <i class="fa-solid fa-envelope" style="color: var(--primary); font-size: 1.2rem;"></i>
+                <span>thanspetals@gmail.com</span>
+              </p>
+
+              <p style="display: flex; gap: 12px; margin-bottom: 20px;">
+                <i class="fa-solid fa-phone" style="color: var(--primary); font-size: 1.2rem;"></i>
+                <span>+1 (800) 555-BLOOM</span>
+              </p>
+
+              <div style="display: flex; gap: 14px;">
+                <a href="#" class="btn-icon-round"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="btn-icon-round"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="btn-icon-round"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#" class="btn-icon-round"><i class="fa-brands fa-whatsapp"></i></a>
+              </div>
+            </div>
+
+            <!-- Map placeholder -->
+            <div class="map-container">
+              <iframe title="Boutique Location Map"
+                src="https://maps.google.com/maps?q=Central%20Park%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-wrap reveal">
+          <h3 class="text-center" style="font-size: 2rem; margin-bottom: 30px;">Frequently Asked Questions</h3>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>How fast is your same-day flower delivery?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-body">
+              <p>Orders placed before 2:00 PM local time are eligible for express same-day delivery within 2 to 4 hours.
+                Our delivery vehicles are climate-controlled to keep your flowers farm-fresh.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>How do I keep my bouquet fresh for longer?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-body">
+              <p>Trim stem ends by 1 inch at a 45-degree angle under water, use lukewarm water in a clean vase, add our
+                complimentary floral nourishment packet, and keep away from direct sunlight.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>Can I customize a bouquet for a special occasion?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-body">
+              <p>Yes! Simply contact our artisan florist team via the contact form or WhatsApp. We can customize flower
+                varieties, color palettes, wrapping paper, and add personal message cards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Newsletter -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="newsletter-card glass-card reveal">
+          <span class="section-subtitle">Exclusive Privileges</span>
+          <h2 style="font-size: 2.4rem; margin-bottom: 12px;">Join The Thans Club</h2>
+          <p style="max-width: 500px; margin: 0 auto;">Subscribe to receive secret discount codes, floral care guides,
+            and VIP early access to seasonal bouquets.</p>
+
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email address..."
+              required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section 12: Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#hero" class="logo" style="margin-bottom: 18px; display: inline-flex;">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Thans Petals</span>
+          </a>
+          <p style="margin-bottom: 20px;">Premium floral boutique delivering hand-crafted elegance and fresh organic
+            blossoms for life's most memorable moments.</p>
+          <div style="display: flex; gap: 12px;">
+            <a href="#" class="btn-icon-round"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="btn-icon-round"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="btn-icon-round"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#hero">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#best-sellers">Shop Bouquets</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Opening Hours</h4>
+          <p style="margin-bottom: 10px;"><strong>Mon - Fri:</strong> 8:00 AM - 8:00 PM</p>
+          <p style="margin-bottom: 10px;"><strong>Saturday:</strong> 9:00 AM - 6:00 PM</p>
+          <p style="margin-bottom: 10px;"><strong>Sunday:</strong> 10:00 AM - 4:00 PM</p>
+          <p><strong style="color: var(--secondary);">Same-Day Delivery Available</strong></p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Instagram Gallery</h4>
+          <div class="insta-grid">
+            <img src="images/cat-roses.jpg" alt="Insta 1">
+            <img src="images/cat-lilies.jpg" alt="Insta 2">
+            <img src="images/cat-tulips.jpg" alt="Insta 3">
+            <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=200&q=80"
+              alt="Insta 4">
+            <img src="images/hero-bg.jpg" alt="Insta 5">
+            <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=200&q=80"
+              alt="Insta 6">
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Thans Petals Boutique. All Rights Reserved. Handcrafted with <i class="fa-solid fa-heart"
+            style="color: var(--primary);"></i> for Flower Lovers worldwide.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Drawer Overlay Backdrop -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Cart Slide-out Drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3>Your Shopping Cart (<span id="cartDrawerCount">0</span>)</h3>
+      <button class="search-close-btn" id="cartClose">&times;</button>
+    </div>
+
+    <div class="drawer-body" id="cartItemsList">
+      <p class="text-center" style="color: var(--text-muted);">Your cart is currently empty.</p>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cart-total-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn" style="width: 100%;">
+        Proceed to Checkout <i class="fa-solid fa-lock"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Wishlist Slide-out Drawer -->
+  <aside class="cart-drawer" id="wishlistDrawer">
+    <div class="drawer-header">
+      <h3>Your Favorites (<span id="wishlistDrawerCount">0</span>)</h3>
+      <button class="search-close-btn" id="wishlistClose">&times;</button>
+    </div>
+
+    <div class="drawer-body" id="wishlistItemsList">
+      <p class="text-center" style="color: var(--text-muted);">No favorite flowers saved yet.</p>
+    </div>
+
+    <div class="drawer-footer">
+      <button class="btn btn-secondary" id="wishlistCloseBtn" style="width: 100%;">Continue Shopping</button>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="quickview-modal" id="quickviewModal">
+    <div class="quickview-card glass-card">
+      <button class="qv-close-btn" id="qvClose">&times;</button>
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden;">
+        <img src="" id="qvImg" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+
+      <div>
+        <span class="product-badge" id="qvBadge">Popular</span>
+        <h2 id="qvTitle" style="font-size: 2rem; margin: 10px 0;">Product Title</h2>
+        <div class="product-rating" id="qvRating" style="margin-bottom: 12px;"></div>
+        <div class="product-price" id="qvPrice" style="font-size: 1.6rem; margin-bottom: 15px;">$0.00</div>
+        <p id="qvDesc" style="margin-bottom: 20px;">Detailed flower description and vase care instructions.</p>
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+          <button class="btn btn-primary" id="qvAddToCartBtn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp & Back to Top -->
+  <a href="https://wa.me/18005552566?text=Hello%20Blooming%20Petals!%20I%20would%20like%20to%20inquire%20about%20flowers."
+    target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/components.js"></script>
+</body>
+
+</html>
